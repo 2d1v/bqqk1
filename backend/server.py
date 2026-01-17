@@ -12,9 +12,6 @@ from datetime import datetime, timezone
 import httpx
 from groq import Groq
 from fastapi.staticfiles import StaticFiles
-
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -35,6 +32,8 @@ WHITELIST = ["roblox_user_8715216578"]
 # Create the main app
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 # Models
 class UserInfo(BaseModel):
