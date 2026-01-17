@@ -16,18 +16,18 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # MongoDB connection
-mongo_url = os.environ['MONGO_URL']
+mongo_url = "mongodb://localhost:27017" 
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+db = client["dummy_db"]
 
 # Groq client
-groq_client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
+groq_client = Groq(api_key="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")
 
 # Auth key
 AUTH_KEY = "Āă↺↙₥Ⅱ₲ď℉⁐ↈă﷼↙ɱə"
 
 # Whitelist
-WHITELIST = ["Player1", "Player2", "TestUser"]
+WHITELIST = ["roblox_user_8715216578"]
 
 # Create the main app
 app = FastAPI()
