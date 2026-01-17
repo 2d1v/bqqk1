@@ -11,6 +11,9 @@ import uuid
 from datetime import datetime, timezone
 import httpx
 from groq import Groq
+from fastapi.staticfiles import StaticFiles
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
