@@ -33,7 +33,7 @@ WHITELIST = ["roblox_user_8715216578"]
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+app.mount("/", StaticFiles(directory="frontend/public", html=True), name="frontend")
 
 # Models
 class UserInfo(BaseModel):
