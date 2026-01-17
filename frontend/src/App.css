@@ -1,0 +1,27 @@
+.App {
+  min-height: 100vh;
+  background-color: #09090b;
+  color: #fafafa;
+}
+
+.console-output {
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.console-output .log-info {
+  color: #60a5fa;
+}
+
+.console-output .log-warn {
+  color: #fbbf24;
+}
+
+.console-output .log-error {
+  color: #ef4444;
+}
+
+.console-output .log-success {
+  color: #10b981;
+}

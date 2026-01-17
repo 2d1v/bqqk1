@@ -1,0 +1,217 @@
+{
+  "summary": {
+    "total_tests": 13,
+    "passed_tests": 11,
+    "failed_tests": 2,
+    "success_rate": "84.6%"
+  },
+  "detailed_results": [
+    {
+      "test_name": "Root API",
+      "method": "GET",
+      "endpoint": "",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "message": "Roblox Script Commander API"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get User Info (ID: 1)",
+      "method": "GET",
+      "endpoint": "v1/user/1",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "userId": 1,
+        "username": "Roblox",
+        "displayName": "Roblox",
+        "created": "2006-02-27T21:06:40.3Z"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Script Data",
+      "method": "GET",
+      "endpoint": "v1/place",
+      "expected_status": 200,
+      "actual_status": 403,
+      "success": false,
+      "response_data": null,
+      "error": {
+        "detail": "User not whitelisted"
+      }
+    },
+    {
+      "test_name": "Update Script Data",
+      "method": "POST",
+      "endpoint": "v1/place",
+      "expected_status": 200,
+      "actual_status": 403,
+      "success": false,
+      "response_data": null,
+      "error": {
+        "detail": "User not whitelisted"
+      }
+    },
+    {
+      "test_name": "Get Script Hub Scripts",
+      "method": "GET",
+      "endpoint": "v1/scripts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [
+        {
+          "id": "admin-1",
+          "title": "Admin Commands",
+          "subtitle": "Full admin panel with moderation tools",
+          "category": "Admin",
+          "code": "-- Admin Commands Script\nlocal prefix = \";\"\n\ngame.Players.LocalPlayer.Chatted:Connect(function(msg)\n    if msg:lower():sub(1, #prefix + 3) == prefix .. \"fly\" then\n        print(\"Flying enabled!\")\n    elseif msg:lower():sub(1, #prefix + 4) == prefix .. \"god\" then\n        print(\"God mode enabled!\")\n    end\nend)"
+        },
+        {
+          "id": "troll-1",
+          "title": "Invisible Player",
+          "subtitle": "Makes your character invisible to others",
+          "category": "Troll",
+          "code": "-- Invisible Player\nlocal player = game.Players.LocalPlayer\nlocal character = player.Character or player.CharacterAdded:Wait()\n\nfor _, part in pairs(character:GetDescendants()) do\n    if part:IsA(\"BasePart\") then\n        part.Transparency = 1\n    end\nend\n\nprint(\"You are now invisible!\")"
+        },
+        {
+          "id": "troll-2",
+          "title": "Speed Hack",
+          "subtitle": "Increase your walk speed dramatically",
+          "category": "Troll",
+          "code": "-- Speed Hack\nlocal player = game.Players.LocalPlayer\nlocal character = player.Character or player.CharacterAdded:Wait()\nlocal humanoid = character:WaitForChild(\"Humanoid\")\n\nhumanoid.WalkSpeed = 100\nprint(\"Speed set to 100!\")"
+        },
+        {
+          "id": "fun-1",
+          "title": "Rainbow Character",
+          "subtitle": "Makes your character flash rainbow colors",
+          "category": "Fun",
+          "code": "-- Rainbow Character\nlocal player = game.Players.LocalPlayer\nlocal character = player.Character or player.CharacterAdded:Wait()\n\nwhile true do\n    for _, part in pairs(character:GetDescendants()) do\n        if part:IsA(\"BasePart\") then\n            part.Color = Color3.fromHSV(tick() % 5 / 5, 1, 1)\n        end\n    end\n    wait(0.1)\nend"
+        },
+        {
+          "id": "fun-2",
+          "title": "Jump Power",
+          "subtitle": "Jump super high like on the moon",
+          "category": "Fun",
+          "code": "-- Jump Power\nlocal player = game.Players.LocalPlayer\nlocal character = player.Character or player.CharacterAdded:Wait()\nlocal humanoid = character:WaitForChild(\"Humanoid\")\n\nhumanoid.JumpPower = 200\nprint(\"Jump power boosted!\")"
+        },
+        {
+          "id": "admin-2",
+          "title": "Teleport Tool",
+          "subtitle": "Teleport to any player in the game",
+          "category": "Admin",
+          "code": "-- Teleport Tool\nlocal prefix = \";\"\n\ngame.Players.LocalPlayer.Chatted:Connect(function(msg)\n    if msg:lower():sub(1, #prefix + 3) == prefix .. \"tp \" then\n        local targetName = msg:sub(#prefix + 4)\n        local target = game.Players:FindFirstChild(targetName)\n        \n        if target and target.Character then\n            game.Players.LocalPlayer.Character:MoveTo(target.Character.HumanoidRootPart.Position)\n            print(\"Teleported to \" .. targetName)\n        end\n    end\nend)"
+        }
+      ],
+      "error": null
+    },
+    {
+      "test_name": "Create Script Hub Script",
+      "method": "POST",
+      "endpoint": "v1/scripts",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "id": "f4c14353-c571-42dc-8bf4-3dd569f9b907",
+        "title": "Test Script",
+        "subtitle": "A test script for validation",
+        "category": "Fun",
+        "code": "print(\"Test script code\")"
+      },
+      "error": null
+    },
+    {
+      "test_name": "AI Chat",
+      "method": "POST",
+      "endpoint": "v1/ai/chat",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "response": "```lua\nprint(\"Hello, World!\")\n```"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Get Tabs",
+      "method": "GET",
+      "endpoint": "v1/tabs",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": [],
+      "error": null
+    },
+    {
+      "test_name": "Create Tab",
+      "method": "POST",
+      "endpoint": "v1/tabs",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "id": "4c36c5be-d720-4da2-a9e7-cb74fed33026",
+        "placeId": 123456,
+        "userId": 1,
+        "name": "test_tab.lua",
+        "content": "-- Test tab content",
+        "created_at": "2026-01-17T09:32:49.123239Z"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Update Tab",
+      "method": "PUT",
+      "endpoint": "v1/tabs/4c36c5be-d720-4da2-a9e7-cb74fed33026",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "status": "updated"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Delete Tab",
+      "method": "DELETE",
+      "endpoint": "v1/tabs/4c36c5be-d720-4da2-a9e7-cb74fed33026",
+      "expected_status": 200,
+      "actual_status": 200,
+      "success": true,
+      "response_data": {
+        "status": "deleted"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Invalid Auth Key",
+      "method": "GET",
+      "endpoint": "v1/place",
+      "expected_status": 403,
+      "actual_status": 403,
+      "success": true,
+      "response_data": {
+        "detail": "Invalid auth key"
+      },
+      "error": null
+    },
+    {
+      "test_name": "Non-whitelisted User",
+      "method": "GET",
+      "endpoint": "v1/place",
+      "expected_status": 403,
+      "actual_status": 403,
+      "success": true,
+      "response_data": {
+        "detail": "User not whitelisted"
+      },
+      "error": null
+    }
+  ]
+}

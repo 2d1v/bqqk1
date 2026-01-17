@@ -1,0 +1,130 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Roblox Script Commander",
+      "archetype": "The Performance Pro (Dark Mode Variant)",
+      "vibe": "Elite, Tactical, High-Precision, Admin-Level Control",
+      "emotional_tone": "Power, Secrecy, Technical Mastery"
+    },
+    "typography": {
+      "font_family": {
+        "headings": "JetBrains Mono, monospace",
+        "body": "Inter, sans-serif",
+        "code": "Fira Code, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-2xl font-medium",
+        "body": "text-base leading-relaxed text-muted-foreground",
+        "small": "text-sm font-medium text-muted-foreground/80"
+      }
+    },
+    "colors": {
+      "theme": "dark",
+      "palette": {
+        "background": "#09090b",
+        "foreground": "#fafafa",
+        "card": "#18181b",
+        "card_foreground": "#fafafa",
+        "popover": "#09090b",
+        "popover_foreground": "#fafafa",
+        "primary": "#ef4444",
+        "primary_foreground": "#fafafa",
+        "secondary": "#27272a",
+        "secondary_foreground": "#fafafa",
+        "muted": "#27272a",
+        "muted_foreground": "#a1a1aa",
+        "accent": "#ef4444",
+        "accent_foreground": "#fafafa",
+        "destructive": "#7f1d1d",
+        "destructive_foreground": "#fafafa",
+        "border": "#27272a",
+        "input": "#27272a",
+        "ring": "#ef4444"
+      },
+      "gradients": {
+        "glow_red": "radial-gradient(circle at center, rgba(239, 68, 68, 0.15) 0%, transparent 70%)",
+        "subtle_overlay": "linear-gradient(to bottom, rgba(24, 24, 27, 0.8), rgba(9, 9, 11, 1))"
+      }
+    },
+    "visual_enhancers": {
+      "glow_effects": {
+        "soft_red": "0 0 20px rgba(239, 68, 68, 0.2)",
+        "intense_red": "0 0 30px rgba(239, 68, 68, 0.4)",
+        "text_glow": "0 0 10px rgba(239, 68, 68, 0.5)"
+      },
+      "borders": {
+        "default": "1px solid rgba(255, 255, 255, 0.1)",
+        "active": "1px solid rgba(239, 68, 68, 0.5)"
+      },
+      "glassmorphism": {
+        "panel": "backdrop-blur-xl bg-black/40 border border-white/10",
+        "overlay": "backdrop-blur-md bg-black/60"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-12",
+        "section_gap": "gap-8",
+        "component_gap": "gap-4"
+      },
+      "grid_systems": {
+        "dashboard": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+        "editor": "grid grid-cols-1 lg:grid-cols-12 gap-4 h-[calc(100vh-4rem)]"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all duration-300",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        "ghost": "hover:bg-accent hover:text-accent-foreground"
+      },
+      "cards": {
+        "default": "bg-card border border-border rounded-xl shadow-sm hover:shadow-[0_0_20px_rgba(239,68,68,0.1)] transition-all duration-300",
+        "glass": "bg-black/40 backdrop-blur-md border border-white/10 rounded-xl"
+      },
+      "inputs": {
+        "default": "bg-input border-transparent focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200 placeholder:text-muted-foreground/50"
+      }
+    },
+    "motion": {
+      "transitions": {
+        "default": "transition-all duration-300 ease-in-out",
+        "hover": "transform hover:-translate-y-1 hover:shadow-lg"
+      },
+      "animations": {
+        "fade_in": "animate-in fade-in duration-500",
+        "slide_up": "animate-in slide-in-from-bottom-4 duration-500"
+      }
+    },
+    "media": {
+      "image_urls": {
+        "hero_bg": "https://images.unsplash.com/photo-1761319659783-cceb1973d6f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHJlZCUyMG5lb24lMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc2ODY0MTk3M3ww&ixlib=rb-4.1.0&q=85",
+        "tech_abstract": "https://images.unsplash.com/photo-1762009365851-c5b5b1aae3b9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMHJlZCUyMG5lb24lMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc2ODY0MTk3M3ww&ixlib=rb-4.1.0&q=85",
+        "coding_setup": "https://images.unsplash.com/photo-1645947091786-4399f228f5f0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxkYXJrJTIwY29kaW5nJTIwc2V0dXB8ZW58MHx8fHwxNzY4NjQxOTc2fDA&ixlib=rb-4.1.0&q=85",
+        "developer_multi_screen": "https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxkYXJrJTIwY29kaW5nJTIwc2V0dXB8ZW58MHx8fHwxNzY4NjQxOTc2fDA&ixlib=rb-4.1.0&q=85"
+      }
+    },
+    "accessibility": {
+      "contrast_check": "Ensure all text has at least 4.5:1 contrast ratio against the dark background.",
+      "focus_states": "Visible focus rings using the primary red color.",
+      "reduced_motion": "Respect prefers-reduced-motion media query."
+    }
+  },
+  "instructions_to_main_agent": {
+    "step_1_setup": "Configure Tailwind with the provided dark theme colors. Install 'lucide-react' for icons and 'sonner' for toasts.",
+    "step_2_entry_page": "Create the Login/Entry page first. It must ask for PlaceID and UserID. Use the 'hero_bg' image as a subtle background with a heavy dark overlay.",
+    "step_3_dashboard": "Build the Dashboard layout. Fetch user data from Roblox API (via proxy) using the UserID. Display 'Welcome back, [Username]'. Use the 'Bento' grid for stats.",
+    "step_4_editor": "Implement the Script Editor using '@monaco-editor/react'. Theme it 'vs-dark'. Add the 'Execute' button with the toggle 'CanExecutable'.",
+    "step_5_ai": "Integrate the AI Assistant panel using Groq API. It should float or be a sidebar in the editor. Use a chat interface.",
+    "step_6_api_routes": "Create the backend routes in FastAPI: '/side/place', '/side/data/place', etc., as specified in the prompt.",
+    "universal_rules": [
+      "Do NOT use gradients for text.",
+      "Use 'JetBrains Mono' for all code-related text and headers.",
+      "Ensure the 'Soft Red' glow is present but not overwhelming.",
+      "All interactive elements must have 'data-testid'.",
+      "Use 'sonner' for all notifications (e.g., 'Script Executed', 'Error')."
+    ]
+  }
+}
